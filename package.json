@@ -1,0 +1,27 @@
+{
+  "name": "twitch_emotes",
+  "version": "1.0.0",
+  "description": "Fetch & prepare twitch emotes for telegram sticker packs",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/resure/twitch_emotes.git"
+  },
+  "keywords": [
+    "twitch",
+    "telegram"
+  ],
+  "author": "Gadzhi Gadzhiev <resure@yandex.ru> (https://resure.net/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/resure/twitch_emotes/issues"
+  },
+  "homepage": "https://github.com/resure/twitch_emotes#readme",
+  "dependencies": {
+    "got": "^4.2.0",
+    "sharp": "0.11.2"
+  }
+}
