@@ -7,10 +7,6 @@ const sharp = require('sharp');
 const imagePath = (name) => `./tmp/fetched/${name}.png`;
 const resultPath = (name) => `./tmp/resized/${name}.png`;
 
-const resizer = sharp()
-        .resize(512, 512)
-        .on('error', err => console.error(err));
-
 twitchEmotes.getImagesHash()
     .then(function (images) {
         var idsByName = Object.keys(images).reduce(function (result, id) {
@@ -21,11 +17,8 @@ twitchEmotes.getImagesHash()
         list.forEach(function (name) {
             twitchEmotes
                 .fetchImageById(idsByName[name])
+                .pipe(sharp().resize(512, 512))
                 .pipe(fs.createWriteStream(imagePath(name), {flags: 'w'}));
-
-            sharp(imagePath(name))
-                .resize(512, 512)
-                .toFile(resultPath(name));
         });
 
     })
