@@ -4,8 +4,7 @@ const twitchEmotes = require('./twitch-emotes-api');
 const fs = require('fs');
 const sharp = require('sharp');
 
-const imagePath = (name) => `./tmp/fetched/${name}.png`;
-const resultPath = (name) => `./tmp/resized/${name}.png`;
+const imagePath = (name) => `./tmp/${name}.png`;
 
 twitchEmotes.getImagesHash()
     .then(function (images) {
